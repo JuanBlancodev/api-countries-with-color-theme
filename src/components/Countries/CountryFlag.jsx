@@ -6,7 +6,7 @@ const FlagContainer = styled.div`
   height: 210px;
   overflow: hidden;
 
-  border-radius: 5px 5px 0;
+  border-radius: 5px 5px 0 0;
 `
 
 const Img = styled.img`
