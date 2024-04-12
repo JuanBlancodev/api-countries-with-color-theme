@@ -34,7 +34,7 @@ const Span = styled.span`
 `
 
 const Header = () => {
-  const { darkMode, setDarkMode } = useGlobalContext()
+  const { darkMode, toggleThemeMode } = useGlobalContext()
 
   const icon  = darkMode ? faSun : faMoon
   const text = darkMode ? 'Light Mode' : 'Dark Mode'
@@ -45,7 +45,7 @@ const Header = () => {
         <H1 className="large bold">Where in the world?</H1>
         <Span 
           className='medium semibold flex align-center gap-1'
-          onClick={() => setDarkMode(!darkMode)}>
+          onClick={() => toggleThemeMode()}>
           <FontAwesomeIcon icon={icon} />
           { text }
         </Span>
