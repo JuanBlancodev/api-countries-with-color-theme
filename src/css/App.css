@@ -1,6 +1,5 @@
 /* Theme */
 .light-mode{
-  color: var(--color-very-dark-blue-text);
   background-color: var(--color-very-light-gray);
 }
 
@@ -9,10 +8,13 @@
 }
 
 .dark-mode{
-  color: var(--color-white);
   background-color: var(--color-very-dark-blue);
 }
+.dark-mode > *,
+.dark-mode > input::placeholder{
+  color: var(--color-white);
+}
 
-.header.dark-mode{
+.item.dark-mode{
   background-color: var(--color-dark-blue);
 }
