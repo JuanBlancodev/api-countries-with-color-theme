@@ -13,11 +13,28 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.main`
-  width: 300px;
-  max-width: 300px;
+  // width: 300px;
+  // max-width: 300px;
 
   display: grid;
   gap: 50px;
+
+  @media (width >= 620px){
+    width: 100%;
+    margin: auto;
+    gap: 25px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  @media (width >= 920px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (width >= 1224px){
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 const CountriesContainer = () => {
@@ -27,7 +44,7 @@ const CountriesContainer = () => {
   useEffect(() => {
     if(countries !== undefined){
       const scrambled = countries.sort(() => 0.5 - Math.random())
-      setInfo(scrambled.slice(0, 5))
+      setInfo(scrambled.slice(0, 8))
     }
   }, [countries])
 

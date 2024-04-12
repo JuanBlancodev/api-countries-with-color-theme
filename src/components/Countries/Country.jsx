@@ -6,8 +6,8 @@ import CountryName from './CountryName'
 import CountryDetails from './CountryDetails'
 
 const Container = styled.a`
-  width: 100%;
-  height: 400px;
+  width: 300px;
+  height: 420px;
 
   border-radius: 5px;
   text-decoration: none;
