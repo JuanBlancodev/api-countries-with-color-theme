@@ -18,6 +18,10 @@ const Container = styled.header`
 
 const H1 = styled.h1`
   grid-column: 2 / 4;
+
+  @media (width < 720px){
+    font-size: var(--font-medium);
+  }
 `
 
 const Span = styled.span`
