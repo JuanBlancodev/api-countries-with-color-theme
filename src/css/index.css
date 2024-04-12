@@ -5,6 +5,7 @@
 
   --font-sm: 14px;
   --font-m: 16px;
+  --font-lg: 20px;
 
   --weight-normal: 300;
   --weight-semibol: 600;
@@ -16,6 +17,14 @@
   --color-dark-gray: hsl(0, 0%, 52%); /*Light mode input*/
   --color-very-light-gray: hsl(0, 0%, 98%); /*Light mode background*/
   --color-white: hsl(0, 0%, 100%); /*Dark mode text & Light mode elements*/
+
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 28px;
+  --spacing-7: 32px;
 }
 
 *{
@@ -23,19 +32,84 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-primary);
+
+  transition: background-color 0.25s;
 }
 
 .container{
   height: 100vh;
 }
 
-/* Theme */
-.light-mode{
-  color: var(--color-very-dark-blue-text);
-  background-color: var(--color-very-light-gray);
+/* Display */
+.grid{
+  display: grid;
 }
 
-.dark-mode{
-  color: var(--color-white);
-  background-color: var(--color-very-dark-blue);
+.flex{
+  display: flex;
+}
+
+/* Align */
+.align-center{
+  align-items: center;
+}
+
+/* Gap */
+.gap-1 {
+  gap: var(--spacing-1);
+}
+
+.gap-2 {
+  gap: var(--spacing-2);
+}
+
+.gap-3 {
+  gap: var(--spacing-3);
+}
+
+.gap-4{
+  gap: var(--spacing-4);
+}
+
+.gap-5{
+  gap: var(--spacing-5);
+}
+
+.gap-6{
+  gap: var(--spacing-6);
+}
+
+.gap-7{
+  gap: var(--spacing-7);
+}
+
+/* Font size */
+.small{
+  font-size: var(--font-sm);
+}
+
+.medium{
+  font-size: var(--font-m);
+}
+
+.large{
+  font-size: var(--font-lg);
+}
+
+/* Weights */
+.normal{
+  font-weight: var(--weight-normal);
+}
+
+.semibold{
+  font-weight: var(--weight-semibol);
+}
+
+.bold{
+  font-weight: var(--weight-bold);
+}
+
+/* Text */
+.nowarp{
+  text-wrap: nowrap;
 }

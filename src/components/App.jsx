@@ -1,11 +1,11 @@
-import useGlobalContext from '../hooks/useGlobalContext'
+import ThemeClassName from "../helpers/ThemeClassName"
 import Header from "./Header"
 
-const App = () => {
-  const { darkMode } = useGlobalContext()
+import '../css/App.css'
 
+const App = () => {
   return (
-    <div className={`container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+    <div className={`container ${ThemeClassName()}`}>
       <Header />
     </div>
   )

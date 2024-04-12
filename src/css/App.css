@@ -1,0 +1,18 @@
+/* Theme */
+.light-mode{
+  color: var(--color-very-dark-blue-text);
+  background-color: var(--color-very-light-gray);
+}
+
+.header.light-mode{
+  box-shadow: 0 0 5px 0 rgb(155, 155, 155);
+}
+
+.dark-mode{
+  color: var(--color-white);
+  background-color: var(--color-very-dark-blue);
+}
+
+.header.dark-mode{
+  background-color: var(--color-dark-blue);
+}
