@@ -24,3 +24,18 @@
   box-sizing: border-box;
   font-family: var(--font-primary);
 }
+
+.container{
+  height: 100vh;
+}
+
+/* Theme */
+.light-mode{
+  color: var(--color-very-dark-blue-text);
+  background-color: var(--color-very-light-gray);
+}
+
+.dark-mode{
+  color: var(--color-white);
+  background-color: var(--color-very-dark-blue);
+}

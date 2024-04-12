@@ -1,6 +1,10 @@
+import Header from "./Header"
+
 const App = () => {
   return (
-    <div>App</div>
+    <div className="container light-mode">
+      <Header />
+    </div>
   )
 }
 
