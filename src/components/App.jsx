@@ -1,14 +1,12 @@
-import Header from "./Header"
+import SearchContainer from "./SearchComponent/SearchContainer";
 import CountriesContainer from "./Countries/CountriesContainer"
-
-import ThemeClassName from "../helpers/ThemeClassName"
 
 import '../css/App.css'
 
 const App = () => {
   return (
-    <div className={`container ${ThemeClassName()}`}>
-      <Header />
+    <div className='container dark-mode'>
+      <SearchContainer />
       <CountriesContainer />
     </div>
   )

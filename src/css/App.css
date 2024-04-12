@@ -7,10 +7,6 @@
   color: var(--color-very-dark-blue-text);
 }
 
-.header.light-mode{
-  box-shadow: 0 0 5px 0 rgb(155, 155, 155);
-}
-
 .country.light-mode{
   background-color: var(--color-white);
 }

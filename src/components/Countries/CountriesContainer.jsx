@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import useGlobalContext from '../../hooks/useGlobalContext'
 import Country from './Country'
@@ -38,24 +37,16 @@ const Content = styled.main`
 `
 
 const CountriesContainer = () => {
-  const { countries } = useGlobalContext()
-  const [info, setInfo] = useState([])
+  const { results } = useGlobalContext()
 
-  useEffect(() => {
-    if(countries !== undefined){
-      const scrambled = countries.sort(() => 0.5 - Math.random())
-      setInfo(scrambled.slice(0, 8))
-    }
-  }, [countries])
-
-  if(countries === undefined){
+  if(results === undefined){
     return null
   }
 
   return (
     <Wrapper>
       <Content>
-        { info.map((value, index) => (
+        { results.map((value, index) => (
           <Country data={value} key={index} />
         )) }
       </Content>

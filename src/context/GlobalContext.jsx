@@ -10,23 +10,34 @@ const GlobalContextProvider = ({ children }) => {
     const themeMode = localStorage.getItem(LOCAL_STORAGE_THEME);
     return themeMode === 'true';
   });
-  const [countries, setCountries] = useState(undefined)
+  const [countries, setCountries] = useState([])
+  const [results, setResults] = useState(undefined)
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const data = localStorage.getItem(LOCAL_STORAGE_COUNTRIES)
-      if(data !== null){
-        setCountries(JSON.parse(data))
+      try {
+        const data = localStorage.getItem(LOCAL_STORAGE_COUNTRIES);
+        if (data !== null) {
+          setCountries(JSON.parse(data));
+        } else {
+          const result = await axios.get('data.json');
+          setCountries(result.data);
+          localStorage.setItem(LOCAL_STORAGE_COUNTRIES, JSON.stringify(result.data));
+        }
+      } catch (error) {
+        console.error('Error fetching countries:', error);
       }
-      else{
-        const result = await axios.get('data.json')
-        setCountries(result.data)
-        localStorage.setItem(LOCAL_STORAGE_COUNTRIES, JSON.stringify(result.data))
-      }
-    }
-
+    };
+    
     fetchCountries()
   }, [])
+
+  useEffect(() => {
+    if(countries.length > 0){
+      const scrambled = countries.sort(() => 0.5 - Math.random())
+      setResults(scrambled.slice(0, 8))
+    }
+  }, [countries])
 
   const toggleThemeMode = () => {
     localStorage.setItem(LOCAL_STORAGE_THEME, !darkMode)
@@ -37,7 +48,7 @@ const GlobalContextProvider = ({ children }) => {
     <GlobalContext.Provider value={{
       darkMode,
       toggleThemeMode,
-      countries
+      results
     }}>
       { children }
     </GlobalContext.Provider>

@@ -1,10 +1,13 @@
 import styled from 'styled-components'
+import { SearchContextProvider } from "../../context/SearchContext";
 import SearchInput from './SearchInput'
 import Regions from './Regions'
 
 const Wrapper = styled.div`
   display: grid;
-  padding: 35px 10px;
+  padding: 0 10px;
+
+  margin: 35px 0;
 
   @media (width >= 620px){
     grid-template-columns: repeat(12, 1fr);
@@ -48,8 +51,10 @@ const SearchContainer = () => {
   return (
     <Wrapper>
       <Content>
-        <SearchInput />
-        <Regions />
+        <SearchContextProvider>
+          <SearchInput />
+          <Regions />
+        </SearchContextProvider>
       </Content>
     </Wrapper>
   )
