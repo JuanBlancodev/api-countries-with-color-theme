@@ -1,8 +1,6 @@
 const ResultSearch = () => {
   return (
-    <div className="container">
-      XD
-    </div>
+    <h1>XD</h1>
   )
 }
 
