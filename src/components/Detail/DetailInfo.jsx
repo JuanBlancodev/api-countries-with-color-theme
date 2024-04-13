@@ -10,9 +10,14 @@ const Wrapper = styled.div`
   gap: 20px;
 
   align-items: start;
+`
 
-  div:nth-child(3){
-    margin: 35px 0;
+const Info = styled.div`
+  display: grid;
+  row-gap: 35px;
+
+  @media (width >= 1024px){
+    grid-template-columns: repeat(2, 250px);
   }
 `
 
@@ -21,21 +26,23 @@ const DetailInfo = ({ data }) => {
     <Wrapper>
       <h1>{ data.name }</h1>
 
-      <MainInfo 
-        nativeName={data.nativeName}
-        population={data.population}
-        region={data.region}
-        subregion={data.subregion}
-        capital={data.capital}
-      />
+      <Info>
+        <MainInfo 
+          nativeName={data.nativeName}
+          population={data.population}
+          region={data.region}
+          subregion={data.subregion}
+          capital={data.capital}
+        />
 
-      <SecondaryInfo 
-        topLevelDomain={data.topLevelDomain}
-        currencies={data.currencies}
-        languages={data.languages}
-      />
-      
-      <Borders borders={data.borders} />
+        <SecondaryInfo 
+          topLevelDomain={data.topLevelDomain}
+          currencies={data.currencies}
+          languages={data.languages}
+        />
+        
+        <Borders borders={data.borders} />
+      </Info>
     </Wrapper>
   )
 }

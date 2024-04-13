@@ -17,6 +17,22 @@ const Wrapper = styled.div`
 const Content = styled.div`
   display: grid;
   gap: 30px;
+
+  @media (width >= 620px){
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width >= 1200px){
+    grid-template-columns: repeat(12, 1fr);
+
+    div:first-child{
+      grid-column: 1 / 7;
+    }
+
+    div:last-child{
+      grid-column: 6 / -1;
+    }
+  }
 `
 
 const DetailContainer = () => {

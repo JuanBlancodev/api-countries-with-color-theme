@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
+import styled from 'styled-components'
+
+const Content = styled.div`
+  @media (width >= 1024px){
+    justify-self: end;
+  }
+`
 
 const SecondaryInfo = ({ topLevelDomain, currencies, languages }) => {
   return (
-    <div className="flex flex-column gap-2">
+    <Content className="flex flex-column gap-2">
       <p className="semibold medium">
         Top Level Domain: <span className="normal medium">{ topLevelDomain.map(item => item).join(', ') }</span>
       </p>
@@ -18,7 +25,7 @@ const SecondaryInfo = ({ topLevelDomain, currencies, languages }) => {
           {languages.map((language) => language.name).join(", ")}
         </span>
       </p>
-    </div>
+    </Content>
   );
 };
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const FlagContainer = styled.div`
   width: 100%;
+  max-width: 400px;
   height: 210px;
   overflow: hidden;
 

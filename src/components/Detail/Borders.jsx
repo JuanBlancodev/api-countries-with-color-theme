@@ -20,10 +20,11 @@ const Border = styled.div`
 const BordersContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
+  grid-template-rows: repeat(auto-fill, 30px);
   place-items: center;
 
-  gap: 5px;
+  gap: 10px;
+  margin-top: 15px;
 `
 
 const Borders = ({ borders }) => {
