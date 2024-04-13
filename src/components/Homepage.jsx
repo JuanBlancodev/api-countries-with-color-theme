@@ -37,7 +37,7 @@ const Homepage = () => {
   const { darkMode, sortRandomCountries } = useGlobalContext()
   useEffect(() => {
     const params = new URLSearchParams(location.search)
-    const query = params.get('query')
+    const query = params.get('query') || params.get('region')
 
     setSearch(query)
 

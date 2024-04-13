@@ -7,10 +7,9 @@ import '../css/App.css'
 
 const App = () => {
   return (
-    <div className='container'>
-      <Header />
-      
+    <div className='container'>      
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" Component={Homepage} />
           <Route path="/search" Component={Homepage} />

@@ -22,3 +22,7 @@
 .item.dark-mode{
   background-color: var(--color-dark-blue);
 }
+
+a:hover{
+  opacity: 0.8;
+}

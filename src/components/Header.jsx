@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
@@ -16,8 +17,9 @@ const Content = styled.header`
   }
 `;
 
-const H1 = styled.h1`
+const H1 = styled(Link)`
   grid-column: 2 / 4;
+  text-decoration: none;
 
   @media (width < 720px) {
     font-size: var(--font-medium);
@@ -39,7 +41,7 @@ const Header = () => {
 
   return (
     <Content className={`item nowarp shadow ${ThemeClassName()}`}>
-      <H1 className="large bold">Where in the world?</H1>
+      <H1 className="large bold" to="/">Where in the world?</H1>
       <Span
         className="medium semibold flex align-center gap-1"
         onClick={() => toggleThemeMode()}

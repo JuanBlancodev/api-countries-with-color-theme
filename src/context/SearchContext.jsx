@@ -16,15 +16,14 @@ const SearchContextProvider = ({ children }) => {
 
     if(searchInput === '' && filter === null) return;
 
-    const query = searchInput.toLowerCase()
-    let queryParams = [], result = [] 
+    const query = searchInput.trim().toLowerCase()
+    let queryParams = [], result = countries
     
     if(searchInput.length > 0){
       result = countries.filter(country => 
         country.name.toLowerCase().includes(query) ||
         country.alpha2Code.toLowerCase().includes(query) ||
         country.alpha3Code.toLowerCase().includes(query) ||
-        (country.altSpellings && country.altSpellings.some(str => str.toLowerCase().includes(query))) ||
         country.nativeName.toLowerCase().includes(query)
       )
 
@@ -32,19 +31,16 @@ const SearchContextProvider = ({ children }) => {
     }
 
     if(filter !== null){
-      if(searchInput.trim().length === 0){
-        result = countries
-      }
-      
       result = result.filter(country => country.region === filter )
 
       queryParams.push(`region=${filter}`);
     }
 
+    navigate(queryParams.length > 0 ? `/search?${queryParams.join('&')}` : '')
+
     setResults(result)
     setSearchInput('')
 
-    navigate(queryParams.length > 0 ? `?${queryParams.join('&')}` : '')
   }
 
   useEffect(() => {

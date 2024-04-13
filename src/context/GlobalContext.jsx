@@ -24,6 +24,7 @@ const GlobalContextProvider = ({ children }) => {
           setCountries(result.data);
           localStorage.setItem(LOCAL_STORAGE_COUNTRIES, JSON.stringify(result.data));
         }
+
       } catch (error) {
         console.error('Error fetching countries:', error);
       }

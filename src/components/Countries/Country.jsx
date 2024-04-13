@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import ThemeClassName from '../../helpers/ThemeClassName'
@@ -5,7 +6,7 @@ import CountryFlag from './CountryFlag'
 import CountryName from './CountryName'
 import CountryDetails from './CountryDetails'
 
-const Container = styled.a`
+const Container = styled(Link)`
   width: 300px;
   height: 420px;
 
@@ -19,7 +20,7 @@ const Info = styled.div`
 
 const Country = ({ data: { flag, name, population, region, capital } }) => {
   return (
-    <Container className={`item shadow country ${ThemeClassName()}`} href={`/details/${name}`}>
+    <Container className={`item shadow country ${ThemeClassName()}`} to={`/details/${name}`}>
       <CountryFlag flag={flag} />
       <Info className="flex flex-column gap-3">
         <CountryName name={name} />
