@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 const Content = styled.div`
   @media (width >= 1024px){
+    justify-self: center;
+  }
+
+  @media (width >= 1200px){
     justify-self: end;
   }
 `

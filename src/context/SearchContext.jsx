@@ -27,7 +27,7 @@ const SearchContextProvider = ({ children }) => {
         country.nativeName.toLowerCase().includes(query)
       )
 
-      queryParams.push(`query=${searchInput}`);
+      queryParams.push(`query=${encodeURIComponent(searchInput)}`);
     }
 
     if(filter !== null){

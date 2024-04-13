@@ -8,6 +8,10 @@ const FlagContainer = styled.div`
   overflow: hidden;
 
   border-radius: 5px 5px 0 0;
+
+  @media (width >= 1200px){
+    grid-column: span 5;
+  }
 `
 
 const Img = styled.img`

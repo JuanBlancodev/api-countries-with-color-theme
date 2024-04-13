@@ -10,28 +10,25 @@ import DetailInfo from './DetailInfo'
 const Wrapper = styled.div`
   margin: 40px 20px;
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 50px;
+
+  @media (width >= 1200px){
+    padding: 0 35px;
+  }
 `
 
 const Content = styled.div`
   display: grid;
   gap: 30px;
 
-  @media (width >= 620px){
+  @media (width >= 690px){
     grid-template-columns: 1fr 1fr;
   }
 
   @media (width >= 1200px){
     grid-template-columns: repeat(12, 1fr);
-
-    div:first-child{
-      grid-column: 1 / 7;
-    }
-
-    div:last-child{
-      grid-column: 6 / -1;
-    }
   }
 `
 

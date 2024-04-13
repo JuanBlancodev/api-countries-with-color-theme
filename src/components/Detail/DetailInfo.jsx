@@ -10,6 +10,10 @@ const Wrapper = styled.div`
   gap: 20px;
 
   align-items: start;
+
+  @media (width >= 1200px){
+    grid-column: span 3;
+  }
 `
 
 const Info = styled.div`
@@ -41,7 +45,7 @@ const DetailInfo = ({ data }) => {
           languages={data.languages}
         />
         
-        <Borders borders={data.borders} />
+        { data.borders && <Borders borders={data.borders} /> }
       </Info>
     </Wrapper>
   )

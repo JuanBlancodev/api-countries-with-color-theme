@@ -3,13 +3,18 @@ import styled from 'styled-components'
 import ThemeClassName from '../../helpers/ThemeClassName'
 
 const Content = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+
+  @media (width >= 1200px){
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+  }
 `
 
 const Border = styled.div`
   width: 100px;
-  padding: 5px 10px;
+  padding: 3px;
   border-radius: 5px;
 
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
@@ -25,12 +30,16 @@ const BordersContainer = styled.div`
 
   gap: 10px;
   margin-top: 15px;
+
+  @media (width >= 1200px){
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 const Borders = ({ borders }) => {
   return (
     <Content>
-      <p className="semibold medium">Border Countries:</p>
+      <p className="nowarp semibold medium">Border Countries:</p>
 
       <BordersContainer>
         { borders.map((item, index) => (
