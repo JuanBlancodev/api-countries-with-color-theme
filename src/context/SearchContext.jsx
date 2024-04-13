@@ -1,15 +1,27 @@
 import { createContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import useGlobalContext from '../hooks/useGlobalContext'
 
 const SearchContext = createContext()
 
 const SearchContextProvider = ({ children }) => {
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const [searchInput, setSearchInput] = useState('')
   const [filter, setFilter] = useState(null)
   const { countries, setResults } = useGlobalContext()
-  const navigate = useNavigate()
+
+  useEffect(() => {
+    search()
+  }, [filter])
+
+  useEffect(() => {
+    if(location.pathname === '/'){
+      setFilter(null)
+    }
+  }, [location])
 
   const search = (event) => {
     if(event !== undefined) event.preventDefault()
@@ -42,10 +54,6 @@ const SearchContextProvider = ({ children }) => {
     setSearchInput('')
 
   }
-
-  useEffect(() => {
-    search()
-  }, [filter])
 
   return (
     <SearchContext.Provider value={{
