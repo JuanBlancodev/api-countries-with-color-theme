@@ -20,8 +20,8 @@ const Info = styled.div`
 
 const Country = ({ data: { flag, name, population, region, capital } }) => {
   return (
-    <Container className={`item shadow country ${ThemeClassName()}`} to={`/details/${name}`}>
-      <CountryFlag flag={flag} />
+    <Container className={`item shadow country ${ThemeClassName()}`} to={`/details/${name.toLowerCase()}`}>
+      <CountryFlag flag={flag} name={name} />
       <Info className="flex flex-column gap-3">
         <CountryName name={name} />
         <CountryDetails population={population} region={region} capital={capital} />

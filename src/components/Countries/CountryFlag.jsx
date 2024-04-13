@@ -15,16 +15,17 @@ const Img = styled.img`
   object-fit: cover;
 `
 
-const CountryFlag = ({ flag }) => {
+const CountryFlag = ({ flag, name }) => {
   return (
     <FlagContainer>
-      <Img src={flag} />
+      <Img src={flag} alt={name} />
     </FlagContainer>
   )
 }
 
 CountryFlag.propTypes = { 
-  flag: PropTypes.string.isRequired
+  flag: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 }
 
 export default CountryFlag

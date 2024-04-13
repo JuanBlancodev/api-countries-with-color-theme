@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './Header'
 import Homepage from './Homepage';
+import DetailContainer from './Detail/DetailContainer';
 
 import '../css/App.css'
 
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" Component={Homepage} />
           <Route path="/search" Component={Homepage} />
+          <Route path="/details/:country" Component={DetailContainer} />
         </Routes>
       </BrowserRouter>
     </div>

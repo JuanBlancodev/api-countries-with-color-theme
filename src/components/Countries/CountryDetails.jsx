@@ -5,7 +5,7 @@ const CountryDetails = ({ population, region, capital }) => {
     <div>
       {population !== undefined && (
         <p className="semibold">
-          Population: <span className="normal">{population}</span>
+          Population: <span className="normal">{population.toLocaleString()}</span>
         </p>
       )}
       {region !== undefined && (
