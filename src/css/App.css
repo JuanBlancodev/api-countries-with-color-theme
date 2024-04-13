@@ -3,7 +3,7 @@
   background-color: var(--color-very-light-gray);
 }
 
-.light-mode *{
+.light-mode * {
   color: var(--color-very-dark-blue-text);
 }
 

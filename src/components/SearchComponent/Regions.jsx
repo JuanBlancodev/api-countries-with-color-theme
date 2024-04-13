@@ -72,7 +72,7 @@ const ListContainer = styled.div`
 
 const Regions = () => {
   const [open, setOpen] = useState(false)
-  const regionsList = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+  const regionsList = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
 
   const { filter } = useSearchContext()
 

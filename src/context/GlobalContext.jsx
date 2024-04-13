@@ -33,11 +33,19 @@ const GlobalContextProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
+    sortRandomCountries()
+  }, [countries])
+
+  useEffect(() => {
+    document.body.className = `${darkMode ? 'dark-mode' : 'light-mode'}`
+  }, [darkMode])
+
+  const sortRandomCountries = () => {
     if(countries.length > 0){
       const scrambled = countries.sort(() => 0.5 - Math.random())
       setResults(scrambled.slice(0, 8))
     }
-  }, [countries])
+  }
 
   const toggleThemeMode = () => {
     localStorage.setItem(LOCAL_STORAGE_THEME, !darkMode)
@@ -48,7 +56,10 @@ const GlobalContextProvider = ({ children }) => {
     <GlobalContext.Provider value={{
       darkMode,
       toggleThemeMode,
-      results
+      countries,
+      sortRandomCountries,
+      results,
+      setResults
     }}>
       { children }
     </GlobalContext.Provider>
