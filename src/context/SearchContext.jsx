@@ -23,11 +23,6 @@ const SearchContextProvider = ({ children }) => {
     }
 
     if(location.pathname === '/search'){
-      if(searchInput.trim().length === 0 && filter === null){
-        navigate('/')
-        return;
-      }
-
       search()
     }
   }, [location.pathname])
