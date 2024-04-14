@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import ThemeClassName from '../../helpers/ThemeClassName'
+import useGlobalContext from '../../hooks/useGlobalContext'
 
 const Content = styled.div`
   display: grid;
@@ -12,7 +14,7 @@ const Content = styled.div`
   }
 `
 
-const Border = styled.div`
+const Border = styled(Link)`
   width: 100px;
   padding: 3px;
   border-radius: 5px;
@@ -20,6 +22,9 @@ const Border = styled.div`
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 
   text-align: center;
+  text-decoration: none;
+
+  color: unset;
 `
 
 const BordersContainer = styled.div`
@@ -37,13 +42,22 @@ const BordersContainer = styled.div`
 `
 
 const Borders = ({ borders }) => {
+  const { countries } = useGlobalContext()
+
   return (
     <Content>
       <p className="nowarp semibold medium">Border Countries:</p>
 
       <BordersContainer>
         { borders.map((item, index) => (
-          <Border className={`item medium ${ThemeClassName()}`} key={index}>{ item }</Border>
+          <Border 
+            className={`item medium ${ThemeClassName()}`} 
+            key={index}
+            to={`/details/${encodeURIComponent(countries.filter(country => 
+              country.alpha3Code === item).map(country => country.name.toLowerCase()))
+            }`}>
+              { item }
+          </Border>
         )) }
       </BordersContainer>
     </Content>

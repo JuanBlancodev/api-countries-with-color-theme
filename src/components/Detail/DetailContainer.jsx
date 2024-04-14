@@ -35,16 +35,16 @@ const Content = styled.div`
 const DetailContainer = () => {
   const { countries, screenLoader } = useGlobalContext()
   const [countryInfo, setCountryInfo] = useState(undefined)
-  const { country } = useParams()
+  let { country } = useParams()
 
   useEffect(() => {
     screenLoader(500)
-  }, [])
+  }, [country])
 
   useEffect(() => {
     const result = countries.filter(item => item.name.toLowerCase() === country)
     setCountryInfo(result[0])
-  }, [countries])
+  }, [countries, country])
 
   if(countryInfo === undefined){
     return null
