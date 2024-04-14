@@ -7,7 +7,7 @@ import ButtonBack from "../ButtonBack"
 import CountryFlag from '../Countries/CountryFlag'
 import DetailInfo from './DetailInfo'
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   margin: 40px 20px;
 
   display: flex;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled.section`
   display: grid;
   gap: 30px;
 

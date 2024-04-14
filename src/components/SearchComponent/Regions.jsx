@@ -33,7 +33,7 @@ const Icon = styled(FontAwesomeIcon)`
   transition: transform 0.25s;
 `
 
-const Menu = styled.ul`
+const Menu = styled.div`
   width: 100%;
 
   position: absolute;
@@ -42,7 +42,6 @@ const Menu = styled.ul`
 
   padding: 0;
   border-radius: 5px;
-  list-style: none;
 
   overflow: hidden;
   height: 0;
@@ -66,8 +65,9 @@ const Menu = styled.ul`
   }
 `
 
-const ListContainer = styled.div`
+const ListContainer = styled.ul`
   margin: 15px;
+  list-style: none;
 `
 
 const Regions = () => {

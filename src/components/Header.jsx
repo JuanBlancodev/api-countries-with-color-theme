@@ -18,13 +18,17 @@ const Content = styled.header`
   }
 `;
 
-const H1 = styled(Link)`
+const H1 = styled.h1`
   grid-column: 2 / 4;
-  text-decoration: none;
 
-  @media (width < 720px) {
+  @media (width <= 720px) {
     font-size: var(--font-medium);
   }
+`
+
+const Title = styled(Link)`
+  color: unset;
+  text-decoration: none;
 `;
 
 const Span = styled.span`
@@ -42,7 +46,9 @@ const Header = () => {
 
   return (
     <Content className={`item nowarp shadow ${ThemeClassName()}`}>
-      <H1 className="large bold" to={PATHNAME_ROOT}>Where in the world?</H1>
+      <H1>
+        <Title className="large bold" to={PATHNAME_ROOT}>Where in the world?</Title>
+      </H1>
       <Span
         className="medium semibold flex align-center gap-1"
         onClick={() => toggleThemeMode()}

@@ -38,7 +38,7 @@ const Homepage = () => {
   }, [location.pathname, location.search])
 
   return (
-    <>
+    <main>
       <SearchContainer />
 
       {search !== null && (
@@ -53,7 +53,7 @@ const Homepage = () => {
       )}
 
       <CountriesContainer />
-    </>
+    </main>
   )
 }
 

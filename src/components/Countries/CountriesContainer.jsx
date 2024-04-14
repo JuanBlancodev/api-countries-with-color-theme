@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import useGlobalContext from '../../hooks/useGlobalContext'
 import Country from './Country'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   margin-top: 50px;
 
   width: 100%;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `
 
-const Content = styled.main`
+const Content = styled.div`
   // width: 300px;
   // max-width: 300px;
 
