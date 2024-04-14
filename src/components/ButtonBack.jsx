@@ -16,13 +16,14 @@ const Button = styled(Link)`
 `
 
 const ButtonBack = () => {
-  const { darkMode } = useGlobalContext()
+  const { darkMode, screenLoader } = useGlobalContext()
 
   return (
     <Button
       className={`flex gap-1 align-center item shadow large semibold 
         ${darkMode ? "dark-mode" : "light-mode"}`}
       to="/"
+      onClick={() => screenLoader(500)}
     >
       <FontAwesomeIcon className="small" icon={faLeftLong} />
       Back

@@ -22,6 +22,7 @@ const Span = styled.span`
 const Homepage = () => {
   const [search, setSearch] = useState(null)
   const location = useLocation()
+  const { sortRandomCountries } = useGlobalContext()
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
@@ -29,7 +30,8 @@ const Homepage = () => {
 
     setSearch(query)
 
-    if(location.pathname === '/' && query === null){
+    if(location.pathname === '/'){
+      sortRandomCountries()
       setSearch(null)
       return;
     }
