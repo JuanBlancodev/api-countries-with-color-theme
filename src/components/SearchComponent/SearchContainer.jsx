@@ -3,7 +3,7 @@ import { SearchContextProvider } from "../../context/SearchContext";
 import SearchInput from './SearchInput'
 import Regions from './Regions'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: grid;
   padding: 0 10px;
 
