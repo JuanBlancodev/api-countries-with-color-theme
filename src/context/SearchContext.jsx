@@ -11,7 +11,7 @@ const SearchContextProvider = ({ children }) => {
 
   const [searchInput, setSearchInput] = useState('')
   const [filter, setFilter] = useState(null)
-  const { countries, setResults } = useGlobalContext()
+  const { countries, setResults, screenLoader } = useGlobalContext()
 
   useEffect(() => {
     search()
@@ -27,6 +27,7 @@ const SearchContextProvider = ({ children }) => {
     if(event !== undefined) event.preventDefault()
 
     if(searchInput === '' && filter === null) return;
+    screenLoader(1000)
 
     const query = searchInput.trim().toLowerCase()
     let queryParams = [], result = countries
@@ -52,7 +53,6 @@ const SearchContextProvider = ({ children }) => {
 
     setResults(result)
     setSearchInput('')
-
   }
 
   return (

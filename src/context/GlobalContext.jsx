@@ -12,6 +12,7 @@ const GlobalContextProvider = ({ children }) => {
   });
   const [countries, setCountries] = useState([])
   const [results, setResults] = useState(undefined)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -53,6 +54,11 @@ const GlobalContextProvider = ({ children }) => {
     setDarkMode(!darkMode)
   }
 
+  const screenLoader = (_time) => {
+    setLoading(true)
+    setTimeout(() => setLoading(false), _time)
+  }
+
   return (
     <GlobalContext.Provider value={{
       darkMode,
@@ -60,7 +66,9 @@ const GlobalContextProvider = ({ children }) => {
       countries,
       sortRandomCountries,
       results,
-      setResults
+      setResults,
+      loading,
+      screenLoader
     }}>
       { children }
     </GlobalContext.Provider>

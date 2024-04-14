@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+import useGlobalContext from '../hooks/useGlobalContext';
 
 import SearchContainer from "./SearchComponent/SearchContainer";
 import CountriesContainer from "./Countries/CountriesContainer"
 import ButtonBack from './ButtonBack';
-import useGlobalContext from '../hooks/useGlobalContext'
 
 const Div = styled.div`
   margin: 0 35px;
@@ -22,7 +22,7 @@ const Span = styled.span`
 const Homepage = () => {
   const [search, setSearch] = useState(null)
   const location = useLocation()
-  const { sortRandomCountries } = useGlobalContext()
+
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const query = params.get('query') || params.get('region')
@@ -30,7 +30,6 @@ const Homepage = () => {
     setSearch(query)
 
     if(location.pathname === '/' && query === null){
-      sortRandomCountries()
       setSearch(null)
       return;
     }
