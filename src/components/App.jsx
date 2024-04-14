@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import useGlobalContext from '../hooks/useGlobalContext';
-import { PATHNAME_ROOT, PATHNAME_SEARCH } from '../config/cfg';
+import { PATHNAME_DETAILS, PATHNAME_ROOT, PATHNAME_SEARCH } from '../config/cfg';
 
 import Header from './Header'
 import Homepage from './Homepage';
@@ -26,7 +26,7 @@ const App = () => {
           <Route path='/' element={<Navigate to="/asd" />} />
           <Route path={`/${PATHNAME_ROOT}`} Component={Homepage}  />
           <Route path={`/${PATHNAME_SEARCH}`} Component={Homepage} />
-          <Route path="/details/:country" Component={DetailContainer} />
+          <Route path={`/${PATHNAME_DETAILS}:country`} Component={DetailContainer} />
         </Routes>
       </BrowserRouter>
     </div>

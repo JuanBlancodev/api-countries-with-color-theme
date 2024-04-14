@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useNavigate, useLocation } from 'react-router-dom'
 import useGlobalContext from '../hooks/useGlobalContext'
 import IsInPathName from '../helpers/IsInPathName'
+import { PATHNAME_SEARCH } from '../config/cfg'
 
 const SearchContext = createContext()
 
@@ -54,7 +55,7 @@ const SearchContextProvider = ({ children }) => {
       queryParams.push(`region=${filter}`);
     }
 
-    navigate(queryParams.length > 0 ? `/search?${queryParams.join('&')}` : '')
+    navigate(queryParams.length > 0 ? `/${PATHNAME_SEARCH}?${queryParams.join('&')}` : '')
 
     setResults(result)
     setSearchInput('')
