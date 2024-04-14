@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useNavigate, useLocation } from 'react-router-dom'
 import useGlobalContext from '../hooks/useGlobalContext'
+import IsInPathName from '../helpers/IsInPathName'
 
 const SearchContext = createContext()
 
@@ -18,11 +19,11 @@ const SearchContextProvider = ({ children }) => {
   }, [filter])
 
   useEffect(() => {
-    if(location.pathname === '/'){
+    if(IsInPathName(location, 'root')){
       setFilter(null)
     }
 
-    if(location.pathname === '/search'){
+    if(IsInPathName(location, 'search')){
       search()
     }
   }, [location.pathname])

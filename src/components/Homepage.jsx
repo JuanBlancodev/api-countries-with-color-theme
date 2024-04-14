@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import useGlobalContext from '../hooks/useGlobalContext';
+import IsInPathName from '../helpers/IsInPathName';
 
 import SearchContainer from "./SearchComponent/SearchContainer";
 import CountriesContainer from "./Countries/CountriesContainer"
@@ -30,10 +31,9 @@ const Homepage = () => {
 
     setSearch(query)
 
-    if(location.pathname === '/'){
+    if(IsInPathName(location, 'root')){
       sortRandomCountries()
       setSearch(null)
-      return;
     }
   }, [location.pathname, location.search])
 
