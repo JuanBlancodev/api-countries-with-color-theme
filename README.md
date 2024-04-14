@@ -54,7 +54,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor Solution]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/frontend-mentor-rest-countries-api-with-color-theme-switcher-AYSwMqR--A))
 - Live Site URL: [Demo](https://juanblancodev.github.io/api-countries-with-color-theme)
 
 ## My process
