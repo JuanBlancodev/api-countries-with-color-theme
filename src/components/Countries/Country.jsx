@@ -5,7 +5,6 @@ import ThemeClassName from '../../helpers/ThemeClassName'
 import CountryFlag from './CountryFlag'
 import CountryName from './CountryName'
 import CountryDetails from './CountryDetails'
-import { PATHNAME_DETAILS } from '../../config/cfg'
 
 const Container = styled(Link)`
   width: 300px;
@@ -23,7 +22,7 @@ const Country = ({ data: { flag, name, population, region, capital } }) => {
   return (
     <Container 
       className={`item shadow country ${ThemeClassName()}`} 
-      to={`/${PATHNAME_DETAILS}${encodeURIComponent(name.toLowerCase())}`}>
+      to={`/deatils/${encodeURIComponent(name.toLowerCase())}`}>
       <CountryFlag flag={flag} name={name} />
       <Info className="flex flex-column gap-3">
         <CountryName name={name} />

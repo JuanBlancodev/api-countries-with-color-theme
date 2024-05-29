@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import useGlobalContext from "../hooks/useGlobalContext";
 import ThemeClassName from "../helpers/ThemeClassName";
-import { PATHNAME_ROOT } from '../config/cfg';
 
 const Content = styled.header`
   display: flex;
@@ -47,7 +46,7 @@ const Header = () => {
   return (
     <Content className={`item nowarp shadow ${ThemeClassName()}`}>
       <H1>
-        <Title className="large bold" to={PATHNAME_ROOT}>Where in the world?</Title>
+        <Title className="large bold" to='/'>Where in the world?</Title>
       </H1>
       <Span
         className="medium semibold flex align-center gap-1"

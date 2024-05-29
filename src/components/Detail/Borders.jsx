@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ThemeClassName from '../../helpers/ThemeClassName'
 import useGlobalContext from '../../hooks/useGlobalContext'
-import { PATHNAME_DETAILS } from '../../config/cfg'
 
 const Content = styled.div`
   display: grid;
@@ -54,7 +53,7 @@ const Borders = ({ borders }) => {
           <Border 
             className={`item medium ${ThemeClassName()}`} 
             key={index}
-            to={`/${PATHNAME_DETAILS}${encodeURIComponent(countries.filter(country => 
+            to={`/details/${encodeURIComponent(countries.filter(country => 
               country.alpha3Code === item).map(country => country.name.toLowerCase()))
             }`}>
               { item }
