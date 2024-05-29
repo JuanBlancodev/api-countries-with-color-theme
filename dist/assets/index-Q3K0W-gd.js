@@ -981,7 +981,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   text-decoration: none;
 `,hw=W.div`
   padding: 20px 25px;
-`,v0=({data:{flag:e,name:n,population:t,region:r,capital:a}})=>N.jsxs(mw,{className:`item shadow country ${Ar()}`,to:`/deatils/${encodeURIComponent(n.toLowerCase())}`,children:[N.jsx(Qc,{flag:e,name:n}),N.jsxs(hw,{className:"flex flex-column gap-3",children:[N.jsx(h0,{name:n}),N.jsx(g0,{population:t,region:r,capital:a})]})]});v0.propTypes={data:z.object.isRequired};const gw=W.section`
+`,v0=({data:{flag:e,name:n,population:t,region:r,capital:a}})=>N.jsxs(mw,{className:`item shadow country ${Ar()}`,to:`/details/${encodeURIComponent(n.toLowerCase())}`,children:[N.jsx(Qc,{flag:e,name:n}),N.jsxs(hw,{className:"flex flex-column gap-3",children:[N.jsx(h0,{name:n}),N.jsx(g0,{population:t,region:r,capital:a})]})]});v0.propTypes={data:z.object.isRequired};const gw=W.section`
   margin-top: 50px;
 
   width: 100%;

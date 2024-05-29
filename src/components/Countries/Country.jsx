@@ -22,7 +22,7 @@ const Country = ({ data: { flag, name, population, region, capital } }) => {
   return (
     <Container 
       className={`item shadow country ${ThemeClassName()}`} 
-      to={`/deatils/${encodeURIComponent(name.toLowerCase())}`}>
+      to={`/details/${encodeURIComponent(name.toLowerCase())}`}>
       <CountryFlag flag={flag} name={name} />
       <Info className="flex flex-column gap-3">
         <CountryName name={name} />
